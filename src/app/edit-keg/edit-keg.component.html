@@ -1,3 +1,21 @@
-<p>
-  edit-keg works!
-</p>
+<div *ngIf='childSelectedKeg'>
+  <h3>Edit {{childSelectedKeg.name}}</h3>
+  <div class="form-group">
+  <label>Edit Name</label>
+  <input [(ngModel)]="childSelectedKeg.name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Edit Brand:</label>
+  <input [(ngModel)]="childSelectedKeg.brand" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Edit price:</label>
+  <input [(ngModel)]="childSelectedKeg.price" class="form-control">
+  </div>
+    <div class="form-group">
+      <label>Edit alcohol content:</label>
+    <input [(ngModel)]="childSelectedKeg.alcoholContent" class="form-control">
+  </div>
+  <button (click)="finishedEditing()" class="btn btn-info">Done</button>
+  <button (click)='deleteKeg()' class='btn btn-danger'>Delete</button>
+</div>

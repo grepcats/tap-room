@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Keg } from '../models/keg.model'
 
 @Component({
   selector: 'app-edit-keg',
   templateUrl: './edit-keg.component.html',
   styleUrls: ['./edit-keg.component.css']
 })
-export class EditKegComponent implements OnInit {
+export class EditKegComponent {
 
-  constructor() { }
+@Input() childSelectedKeg: Keg;
+@Output() clickedDone = new EventEmitter();
+@Output() clickedDelete = new EventEmitter();
 
-  ngOnInit() {
-  }
+finishedEditing() {
+  this.clickedDone.emit();
+}
+
+deleteKeg() {
+  this.clickedDelete.emit();
+}
 
 }
