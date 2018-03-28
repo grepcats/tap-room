@@ -1,7 +1,9 @@
-<select (change)="onChange($event.target.value)">
-  <option value="allKegs">All Kegs</option>
-  <option value="under10Kegs">Low Kegs</option>
-</select>
+<div class="selector">
+  <select (change)="onChange($event.target.value)" class="form-control">
+    <option value="allKegs">All Kegs</option>
+    <option value="under10Kegs">Low Kegs</option>
+  </select>
+</div>
 
 <table class="table table-bordered">
   <thead>
@@ -20,7 +22,11 @@
       <td>{{keg.name}}</td>
       <td>{{keg.brand}}</td>
       <td>${{keg.price}}</td>
-      <td>{{keg.alcoholContent}}%</td>
+      <td><span [ngClass]="{
+        'high': keg.alcoholContent >= 6.0,
+        'low': keg.alcoholContent < 6.0,
+        'veryHigh': keg.alcoholContent >= 9.0
+      }">{{keg.alcoholContent}}%</span></td>
       <td>Pints: {{keg.pints}}</td>
       <td><button (click)="editButtonClicked(keg)" class="btn btn-info">Edit</button></td>
       <td><button (click)="saleButtonClicked(keg)" class="btn btn-warning">Sell Pint</button></td>
