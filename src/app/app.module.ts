@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { EditKegComponent } from './edit-keg/edit-keg.component';
+import { ListKegComponent } from './list-keg/list-keg.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditKegComponent,
+    ListKegComponent
   ],
   imports: [
     BrowserModule
