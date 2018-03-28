@@ -21,13 +21,22 @@
     <tr *ngFor="let keg of childKegList | under10:filterByPints">
       <td>{{keg.name}}</td>
       <td>{{keg.brand}}</td>
-      <td>${{keg.price}}</td>
       <td><span [ngClass]="{
-        'high': keg.alcoholContent >= 6.0,
-        'low': keg.alcoholContent < 6.0,
-        'veryHigh': keg.alcoholContent >= 9.0
+        'cheap': keg.price < 4,
+        'midRange': keg.price < 7 && keg.price >= 4,
+        'expensive': keg.price >= 7
+      }">${{keg.price}}</span></td>
+      <td><span [ngClass]="{
+        'low': keg.alcoholContent < 6,
+        'high': keg.alcoholContent >= 6,
+        'veryHigh': keg.alcoholContent >= 9
       }">{{keg.alcoholContent}}%</span></td>
-      <td>Pints: {{keg.pints}}</td>
+      <td>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" [ngStyle]="{'width': returnPercentage(keg)}">{{keg.pints}}
+          </div>
+        </div>
+      </td>
       <td><button (click)="editButtonClicked(keg)" class="btn btn-info">Edit</button></td>
       <td><button (click)="saleButtonClicked(keg)" class="btn btn-warning">Sell Pint</button></td>
     </tr>

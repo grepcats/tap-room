@@ -27,7 +27,10 @@ export class ListKegComponent {
 
   onChange(optionFromMenu) {
     this.filterByPints = optionFromMenu;
-    console.log(this.filterByPints);
+  }
+
+  returnPercentage(kegToCalculate: Keg) {
+    return (kegToCalculate.pints / 15 * 100) + "%";
   }
 
 }

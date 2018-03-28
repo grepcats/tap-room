@@ -18,3 +18,15 @@ select {
 .veryHigh {
   font-size: 2em;
 }
+
+.cheap {
+  color: #FFFF99;
+}
+
+.midRange {
+  color: #f4ac66;
+}
+
+.expensive {
+  color: #720000;
+}

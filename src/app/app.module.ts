@@ -6,6 +6,7 @@ import { EditKegComponent } from './edit-keg/edit-keg.component';
 import { ListKegComponent } from './list-keg/list-keg.component';
 import { NewKegComponent } from './new-keg/new-keg.component';
 import { Under10Pipe } from './under10.pipe';
+import { NgStyle } from '@angular/common';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { Under10Pipe } from './under10.pipe';
     EditKegComponent,
     ListKegComponent,
     NewKegComponent,
-    Under10Pipe
+    Under10Pipe,
   ],
   imports: [
     BrowserModule,
