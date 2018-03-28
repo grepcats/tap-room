@@ -13,6 +13,10 @@ export class AppComponent {
 
   selectedKeg: Keg = null;
 
+  addKeg(newKeg: Keg) {
+    this.masterKegList.push(newKeg);
+  }
+
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
   }
