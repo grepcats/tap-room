@@ -25,6 +25,7 @@ export class AppComponent {
   deleteKeg() {
       let index = this.masterKegList.indexOf(this.selectedKeg)
       this.masterKegList.splice(index, 1);
+      this.selectedKeg = null;
   }
 
  }

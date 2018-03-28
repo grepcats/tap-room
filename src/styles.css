@@ -1,5 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
 h1 {
   font-family: 'Shrikhand', cursive;
+  color: white;
+}
+
+.jumbotron {
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+body {
+  font-family: 'Pridi', serif;
+  background-image: url("./img/lights.jpg");
+  background-color: black;
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  color: white
+
+}
+
+ul {
+  font-size: 3em;
 }
