@@ -12,6 +12,7 @@ export class AppComponent {
   masterKegList: Keg[] = [new Keg("Old World Lager", "Matchless", 5, 4.8), new Keg("Fuzztail", "Sunriver", 4, 5.0), new Keg("Hairy Knuckle", "Sasquatch", 5, 6.9)]
 
   selectedKeg: Keg = null;
+  selectedPintKeg: Keg = null;
 
   addKeg(newKeg: Keg) {
     this.masterKegList.push(newKeg);
@@ -30,6 +31,11 @@ export class AppComponent {
       let index = this.masterKegList.indexOf(this.selectedKeg)
       this.masterKegList.splice(index, 1);
       this.selectedKeg = null;
+  }
+
+  modifyKegPints(clickedKeg) {
+    this.selectedPintKeg = clickedKeg;
+    this.selectedPintKeg.pints -= 1;
   }
 
  }
