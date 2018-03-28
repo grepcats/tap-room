@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { EditKegComponent } from './edit-keg/edit-keg.component';
 import { ListKegComponent } from './list-keg/list-keg.component';
 import { NewKegComponent } from './new-keg/new-keg.component';
+import { Under10Pipe } from './under10.pipe';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { NewKegComponent } from './new-keg/new-keg.component';
     AppComponent,
     EditKegComponent,
     ListKegComponent,
-    NewKegComponent
+    NewKegComponent,
+    Under10Pipe
   ],
   imports: [
     BrowserModule,

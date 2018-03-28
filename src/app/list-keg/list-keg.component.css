@@ -3,3 +3,8 @@ table {
   margin-top: 30px;
   font-size: 1.25em;
 }
+
+
+select {
+  color: black;
+}

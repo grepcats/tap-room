@@ -1,3 +1,7 @@
+<select (change)="onChange($event.target.value)">
+  <option value="allKegs">All Kegs</option>
+  <option value="under10Kegs">Low Kegs</option>
+</select>
 
 <table class="table table-bordered">
   <thead>
@@ -12,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let keg of childKegList">
+    <tr *ngFor="let keg of childKegList | under10:filterByPints">
       <td>{{keg.name}}</td>
       <td>{{keg.brand}}</td>
       <td>${{keg.price}}</td>

@@ -35,7 +35,7 @@ export class AppComponent {
 
   modifyKegPints(clickedKeg) {
     this.selectedPintKeg = clickedKeg;
-    this.selectedPintKeg.pints -= 1;
+    this.selectedPintKeg.pints -= 10;
   }
 
  }

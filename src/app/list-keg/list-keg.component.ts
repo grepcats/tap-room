@@ -8,8 +8,10 @@ import { Keg } from '../models/keg.model';
 })
 export class ListKegComponent {
 
+  filterByPints: string = "allKegs";
+
   @Input() childKegList: Keg[];
-  @Input() childSelectedPintKeg: Keg;  
+  @Input() childSelectedPintKeg: Keg;
   @Output() clickSender = new EventEmitter();
   @Output() saleSender = new EventEmitter();
 
@@ -21,6 +23,11 @@ export class ListKegComponent {
 
   saleButtonClicked(kegToModify: Keg) {
     this.saleSender.emit(kegToModify);
+  }
+
+  onChange(optionFromMenu) {
+    this.filterByPints = optionFromMenu;
+    console.log(this.filterByPints);
   }
 
 }
