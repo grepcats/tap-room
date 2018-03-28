@@ -30,3 +30,21 @@ select {
 .expensive {
   color: #720000;
 }
+
+.progress-bar-full {
+  background-color: green;
+}
+
+.progress-bar-mid {
+  background-color: orange;
+}
+
+.progress-bar-empty {
+  background-color: red;
+}
+
+/*[ngClass]="{
+  'progress-bar progress-bar-full': keg.pints > 12,
+  'progress-bar progress-bar-mid': keg.pints > 7 && keg.pints <= 12,
+  'progress-bar progress-bar-empty': keg.pints <= 7
+}"*/
