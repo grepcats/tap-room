@@ -7,18 +7,22 @@ h1 {
 }
 
 .jumbotron {
-  background-color: rgba(0, 0, 255, 0.2);
+  /*background-color: rgba(0, 0, 255, 0.2);*/
+  background-image: url("./img/bottles.jpg");
+  background-color: black;
+  background-position: center;
+  background-size: cover;
+  color: #F5AF53;
 }
 
 body {
   font-family: 'Pridi', serif;
-  background-image: url("./img/lights.jpg");
-  background-color: black;
-  background-repeat: no-repeat;
+  color: white;
+  background-color: #F4D6AD;
+}
 
-  background-size: cover;
-  color: white
-
+.container {
+  background-color: #747f7a;
 }
 
 ul {

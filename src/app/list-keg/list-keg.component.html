@@ -1,4 +1,25 @@
 
-<ul>
-  <li *ngFor="let keg of childKegList">{{keg.name}}, {{keg.brand}}, ${{keg.price}}, {{keg.alcoholContent}}%. Pints: {{keg.pints}} <button (click)="saleButtonClicked(keg)" class="btn btn-warning">Sell Pint</button> <button (click)="editButtonClicked(keg)" class="btn btn-info">Edit</button></li>
-</ul>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Beer Name</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Alcohol Content</th>
+      <th>Remaining Pints</th>
+      <th>Edit</th>
+      <th>Sell</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let keg of childKegList">
+      <td>{{keg.name}}</td>
+      <td>{{keg.brand}}</td>
+      <td>${{keg.price}}</td>
+      <td>{{keg.alcoholContent}}%</td>
+      <td>Pints: {{keg.pints}}</td>
+      <td><button (click)="editButtonClicked(keg)" class="btn btn-info">Edit</button></td>
+      <td><button (click)="saleButtonClicked(keg)" class="btn btn-warning">Sell Pint</button></td>
+    </tr>
+  </tbody>
+</table>
