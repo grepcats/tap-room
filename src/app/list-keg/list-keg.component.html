@@ -21,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let keg of childKegList | under10:filterByPints">
+    <tr *ngFor="let keg of kegs | under10:filterByPints">
       <td>{{keg.name}}</td>
       <td>{{keg.brand}}</td>
       <td><span [ngClass]="{

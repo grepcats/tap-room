@@ -10,6 +10,8 @@ import { NgStyle } from '@angular/common';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { routing } from './app.routing';
+import { HttpModule } from '@angular/http';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -30,7 +32,9 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

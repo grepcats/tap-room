@@ -1,14 +1,17 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from '../models/keg.model';
+import { KegService } from '../keg.service';
 
 @Component({
   selector: 'app-list-keg',
   templateUrl: './list-keg.component.html',
-  styleUrls: ['./list-keg.component.css']
+  styleUrls: ['./list-keg.component.css'],
+  providers: [KegService]
 })
-export class ListKegComponent {
+export class ListKegComponent implements OnInit {
 
   filterByPints: string = "allKegs";
+  kegs: Keg[];
 
   @Input() childKegList: Keg[];
   @Input() childSelectedPintKeg: Keg;
@@ -20,12 +23,18 @@ export class ListKegComponent {
   @Output() clickedNew = new EventEmitter();
 
 
-  constructor() { }
+  constructor(private kegService: KegService) { }
+
+  ngOnInit() {
+    this.kegs = this.kegService.getKegs();
+  }
+
 
   editButtonClicked(kegToEdit: Keg) {
     this.editFormView = true;
     this.newFormView = true;
     this.clickSender.emit(kegToEdit);
+
   }
 
   newButtonClicked() {
