@@ -4,7 +4,9 @@
 h1 {
   font-family: 'Shrikhand', cursive;
   color: white;
+  text-shadow: 5px 5px black;
 }
+
 
 .jumbotron {
   /*background-color: rgba(0, 0, 255, 0.2);*/
