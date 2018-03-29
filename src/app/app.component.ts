@@ -43,19 +43,19 @@ export class AppComponent {
   sort(by: string) {
     switch(by) {
       case 'alcAsc':
-        return this.masterKegList.sort(compareAlcoholAsc);
+        return this.masterKegList.sort(compareAlcohol);
       case 'alcDesc':
-        return this.masterKegList.sort(compareAlcoholDesc);
+        return this.masterKegList.sort(compareAlcohol).reverse();
       case 'priceAsc':
-        return this.masterKegList.sort(comparePriceAsc);
+        return this.masterKegList.sort(comparePrice);
       case 'priceDesc':
-        return this.masterKegList.sort(comparePriceDesc);
+        return this.masterKegList.sort(comparePrice).reverse();
     }
   }
 
 }
 
-function compareAlcoholAsc(a,b) {
+function compareAlcohol(a,b) {
  if (a.alcoholContent < b.alcoholContent)
    return -1;
  if (a.alcoholContent > b.alcoholContent)
@@ -63,26 +63,10 @@ function compareAlcoholAsc(a,b) {
  return 0;
 }
 
-function compareAlcoholDesc(a,b) {
- if (a.alcoholContent > b.alcoholContent)
-   return -1;
- if (a.alcoholContent < b.alcoholContent)
-   return 1;
- return 0;
-}
-
-function comparePriceAsc(a,b) {
+function comparePrice(a,b) {
  if (a.price < b.price)
    return -1;
  if (a.price > b.price)
-   return 1;
- return 0;
-}
-
-function comparePriceDesc(a,b) {
- if (a.price > b.price)
-   return -1;
- if (a.price < b.price)
    return 1;
  return 0;
 }
