@@ -7,7 +7,16 @@ import { ListKegComponent } from './list-keg/list-keg.component';
 import { NewKegComponent } from './new-keg/new-keg.component';
 import { Under10Pipe } from './under10.pipe';
 import { NgStyle } from '@angular/common';
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+}
 
 @NgModule({
   declarations: [
@@ -19,7 +28,9 @@ import { NgStyle } from '@angular/common';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
