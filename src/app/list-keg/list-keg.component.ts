@@ -14,6 +14,7 @@ export class ListKegComponent {
   @Input() childSelectedPintKeg: Keg;
   @Output() clickSender = new EventEmitter();
   @Output() saleSender = new EventEmitter();
+  @Output() clickSort = new EventEmitter();
 
   constructor() { }
 
@@ -25,12 +26,13 @@ export class ListKegComponent {
     this.saleSender.emit(kegToModify);
   }
 
-  onChange(optionFromMenu) {
-    this.filterByPints = optionFromMenu;
+  sortButtonClicked(by: string) {
+    this.clickSort.emit(by);
   }
 
   returnPercentage(kegToCalculate: Keg) {
     return (kegToCalculate.pints / 124 * 100) + "%";
   }
+
 
 }

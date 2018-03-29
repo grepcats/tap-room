@@ -35,3 +35,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * As an employee, I want to be able to see kegs with less than 10 pints left so I can be ready to change them.
 * As a patron, I want to have kegs prices to be color-coded for easy readability. Perhaps based on their price (greater or less than $5 per pint, perhaps) or the particular style of beer or kombucha.
 * As a patron, I want to use the alcohol content property to display stronger beers differently than weaker beers.
+* As a patron/employee, I want to be able to sort beers based on price, alcohol content, or number of pints left
+
+TODO
+-Make edit experience better

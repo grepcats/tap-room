@@ -6,7 +6,7 @@
     </h1>
   </div>
   <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
-  <app-list-keg [childKegList] = "masterKegList" (clickSender) = "editKeg($event)" (saleSender)="modifyKegPints($event)"  [childSelectedPintKeg] = "selectedPintKeg"></app-list-keg>
+  <app-list-keg [childKegList] = "masterKegList" (clickSender) = "editKeg($event)" (saleSender)="modifyKegPints($event)" [childSelectedPintKeg] = "selectedPintKeg" (clickSort) = "sort($event)"></app-list-keg>
   <app-edit-keg [childSelectedKeg] = "selectedKeg" (clickedDone) = "finishedEditing()" (clickedDelete) = "deleteKeg()"></app-edit-keg>
 
 </div>

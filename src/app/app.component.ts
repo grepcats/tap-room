@@ -38,7 +38,51 @@ export class AppComponent {
     if (this.selectedPintKeg.pints > 0 ) {
       this.selectedPintKeg.pints -= 4;
     }
-
   }
 
- }
+  sort(by: string) {
+    switch(by) {
+      case 'alcAsc':
+        return this.masterKegList.sort(compareAlcoholAsc);
+      case 'alcDesc':
+        return this.masterKegList.sort(compareAlcoholDesc);
+      case 'priceAsc':
+        return this.masterKegList.sort(comparePriceAsc);
+      case 'priceDesc':
+        return this.masterKegList.sort(comparePriceDesc);
+    }
+  }
+
+}
+
+function compareAlcoholAsc(a,b) {
+ if (a.alcoholContent < b.alcoholContent)
+   return -1;
+ if (a.alcoholContent > b.alcoholContent)
+   return 1;
+ return 0;
+}
+
+function compareAlcoholDesc(a,b) {
+ if (a.alcoholContent > b.alcoholContent)
+   return -1;
+ if (a.alcoholContent < b.alcoholContent)
+   return 1;
+ return 0;
+}
+
+function comparePriceAsc(a,b) {
+ if (a.price < b.price)
+   return -1;
+ if (a.price > b.price)
+   return 1;
+ return 0;
+}
+
+function comparePriceDesc(a,b) {
+ if (a.price > b.price)
+   return -1;
+ if (a.price < b.price)
+   return 1;
+ return 0;
+}
