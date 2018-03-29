@@ -33,7 +33,10 @@
       }">{{keg.alcoholContent}}%</span></td>
       <td>
         <div class="progress">
-          <div class="progress-bar" role="progressbar" [ngStyle]="{'width': returnPercentage(keg)}">{{keg.pints}}
+          <div [ngClass]="{'progress-bar': true,
+          'progress-bar-success': keg.pints > 82,
+          'progress-bar-warning': keg.pints > 40 && keg.pints <= 82,
+          'progress-bar-danger': keg.pints <= 40 }" role="progressbar" [ngStyle]="{'width': returnPercentage(keg), 'min-width': '10px'}">{{keg.pints}}
           </div>
         </div>
       </td>
