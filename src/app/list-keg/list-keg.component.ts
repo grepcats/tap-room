@@ -12,13 +12,17 @@ export class ListKegComponent {
 
   @Input() childKegList: Keg[];
   @Input() childSelectedPintKeg: Keg;
+  @Input() editFormView: boolean;
   @Output() clickSender = new EventEmitter();
   @Output() saleSender = new EventEmitter();
   @Output() clickSort = new EventEmitter();
+  //@Output() editFormClicked = new EventEmitter();
 
   constructor() { }
 
   editButtonClicked(kegToEdit: Keg) {
+    this.editFormView = true;
+    //this.editFormClicked.emit(this.editFormView);
     this.clickSender.emit(kegToEdit);
   }
 

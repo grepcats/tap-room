@@ -13,17 +13,19 @@ export class AppComponent {
 
   selectedKeg: Keg = null;
   selectedPintKeg: Keg = null;
+  editFormView: boolean = false;
 
   addKeg(newKeg: Keg) {
     this.masterKegList.push(newKeg);
   }
 
   editKeg(clickedKeg) {
+    this.editFormView = true;
     this.selectedKeg = clickedKeg;
   }
 
-
   finishedEditing() {
+    this.editFormView = false;
     this.selectedKeg = null;
   }
 
@@ -31,6 +33,7 @@ export class AppComponent {
       let index = this.masterKegList.indexOf(this.selectedKeg)
       this.masterKegList.splice(index, 1);
       this.selectedKeg = null;
+      this.editFormView = false;
   }
 
   modifyKegPints(clickedKeg) {
