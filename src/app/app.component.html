@@ -5,9 +5,11 @@
       Welcome to {{ title }}!
     </h1>
   </div>
-  <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
+  <div *ngIf="newFormView">
+    <app-new-keg (sendKeg)="addKeg($event)" [cancelBool] = "cancelBool" (cancelSender) = "cancel($event)"></app-new-keg>
+  </div>
   <div *ngIf="!editFormView">
-    <app-list-keg [childKegList] = "masterKegList" (clickSender) = "editKeg($event)" (saleSender)="modifyKegPints($event)" [editFormView] = "editFormView" [childSelectedPintKeg] = "selectedPintKeg" (clickSort) = "sort($event)"></app-list-keg>
+    <app-list-keg [childKegList] = "masterKegList" (clickSender) = "editKeg($event)" (saleSender)="modifyKegPints($event)" [editFormView] = "editFormView" [childSelectedPintKeg] = "selectedPintKeg" (clickSort) = "sort($event)" [newFormView] = "newFormView" (clickedNew) = "updateShowNew($event)"></app-list-keg>
   </div>
   <div *ngIf="editFormView">
     <app-edit-keg [childSelectedKeg] = "selectedKeg" (clickedDone) = "finishedEditing()" (clickedDelete) = "deleteKeg()"></app-edit-keg>

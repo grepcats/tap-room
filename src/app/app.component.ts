@@ -14,9 +14,22 @@ export class AppComponent {
   selectedKeg: Keg = null;
   selectedPintKeg: Keg = null;
   editFormView: boolean = false;
+  newFormView: boolean = false;
+  cancelBool: boolean = false;
 
   addKeg(newKeg: Keg) {
+    this.newFormView = false;
     this.masterKegList.push(newKeg);
+  }
+
+  cancel(state: boolean) {
+    this.cancelBool = state;
+    this.newFormView = false;
+  }
+
+  updateShowNew(state: boolean) {
+    this.newFormView = state;
+
   }
 
   editKeg(clickedKeg) {

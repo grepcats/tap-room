@@ -13,15 +13,24 @@ export class ListKegComponent {
   @Input() childKegList: Keg[];
   @Input() childSelectedPintKeg: Keg;
   @Input() editFormView: boolean;
+  @Input() newFormView: boolean;
   @Output() clickSender = new EventEmitter();
   @Output() saleSender = new EventEmitter();
   @Output() clickSort = new EventEmitter();
+  @Output() clickedNew = new EventEmitter();
+
 
   constructor() { }
 
   editButtonClicked(kegToEdit: Keg) {
     this.editFormView = true;
+    this.newFormView = true;
     this.clickSender.emit(kegToEdit);
+  }
+
+  newButtonClicked() {
+    this.newFormView = true;
+    this.clickedNew.emit(this.newFormView);
   }
 
   saleButtonClicked(kegToModify: Keg) {
@@ -35,10 +44,9 @@ export class ListKegComponent {
   onChange(optionFromMenu) {
     this.filterByPints = optionFromMenu;
   }
-  
+
   returnPercentage(kegToCalculate: Keg) {
     return (kegToCalculate.pints / 124 * 100) + "%";
   }
-
 
 }

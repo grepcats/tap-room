@@ -8,16 +8,16 @@ import { Keg } from '../models/keg.model'
 })
 export class EditKegComponent {
 
-@Input() childSelectedKeg: Keg;
-@Output() clickedDone = new EventEmitter();
-@Output() clickedDelete = new EventEmitter();
+  @Input() childSelectedKeg: Keg;
+  @Output() clickedDone = new EventEmitter();
+  @Output() clickedDelete = new EventEmitter();
 
-finishedEditing() {
-  this.clickedDone.emit();
-}
+  finishedEditing() {
+    this.clickedDone.emit();
+  }
 
-deleteKeg() {
-  this.clickedDelete.emit();
-}
+  deleteKeg() {
+    this.clickedDelete.emit();
+  }
 
 }
