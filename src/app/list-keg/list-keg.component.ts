@@ -16,13 +16,11 @@ export class ListKegComponent {
   @Output() clickSender = new EventEmitter();
   @Output() saleSender = new EventEmitter();
   @Output() clickSort = new EventEmitter();
-  //@Output() editFormClicked = new EventEmitter();
 
   constructor() { }
 
   editButtonClicked(kegToEdit: Keg) {
     this.editFormView = true;
-    //this.editFormClicked.emit(this.editFormView);
     this.clickSender.emit(kegToEdit);
   }
 
@@ -34,6 +32,10 @@ export class ListKegComponent {
     this.clickSort.emit(by);
   }
 
+  onChange(optionFromMenu) {
+    this.filterByPints = optionFromMenu;
+  }
+  
   returnPercentage(kegToCalculate: Keg) {
     return (kegToCalculate.pints / 124 * 100) + "%";
   }
